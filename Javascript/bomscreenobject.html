@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        span{
+            display: block;
+            padding: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button" id="b1">Click to see width and height</button>
+        <span></span>
+
+        <p id="result">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, non consequatur? Aliquam, at, adipisci, esse cum libero unde nulla odio doloribus magnam ipsa saepe cumque vitae debitis commodi quis error nemo fuga omnis veritatis. Vero perferendis aliquid eum nulla dolorum eos accusamus animi temporibus consequuntur quam veritatis officia molestiae, voluptates quos fugiat officiis culpa a molestias! Eos odio nulla assumenda omnis, ullam perspiciatis distinctio et, ducimus vitae porro esse, iure eveniet ab earum excepturi veritatis maiores tempora. Quod sunt doloremque reiciendis totam facilis dicta, laborum incidunt iure a, possimus voluptatum quis minus odit. Reprehenderit suscipit, dolorum incidunt possimus, a amet molestias rerum accusamus quae perspiciatis quo aspernatur velit hic quam voluptas ipsam optio unde commodi! Beatae earum ipsam incidunt architecto doloribus, assumenda magnam illo dolores, autem maiores suscipit ad nesciunt laborum unde nostrum, modi cumque a quidem sunt expedita. Doloremque quaerat eveniet consectetur minus in sed dolores voluptatum itaque cupiditate vitae modi, facere, ab maxime, asperiores eius temporibus facilis vero sapiente necessitatibus praesentium reprehenderit excepturi repellendus velit! Omnis dolore architecto quibusdam nihil similique sunt neque voluptates mollitia quisquam quos nulla, doloribus iure porro repellat officia, atque minus. Ab corrupti nobis atque illum qui recusandae maiores aut, consequuntur, dolorem doloremque ipsum cumque nesciunt architecto! Quam repellat porro sapiente, magnam voluptatem quia vel aliquid saepe maxime iusto aperiam libero quidem iure cum expedita dicta nobis quo, vitae ab impedit aut a. Veritatis quisquam perferendis dolorum beatae cum iste fuga, odio voluptates neque. Architecto corrupti doloremque vero modi consequatur assumenda quod eaque ab nam accusamus provident fugit temporibus totam facilis nihil maiores, earum animi minima. Dignissimos repellendus doloremque sapiente quam aspernatur? Quos, doloremque? Molestiae eveniet reprehenderit repudiandae ex cum aspernatur hic voluptatem maiores at fuga in incidunt mollitia blanditiis fugit, ab assumenda eos natus rerum. Praesentium soluta, asperiores consectetur nulla repudiandae distinctio quia illum, quis esse dicta magni quae corporis tempora expedita et explicabo facilis nesciunt. Beatae, explicabo dolorum. Illo magni iusto exercitationem molestias similique nesciunt animi rerum doloremque recusandae, ad repudiandae provident facilis assumenda, adipisci autem culpa quod pariatur voluptatibus? Corrupti quia debitis velit iusto asperiores. Impedit, suscipit blanditiis incidunt provident dolorem ut, nulla quam ipsa natus perferendis, harum eligendi nesciunt eius accusamus. Iure nulla expedita dolore velit? Vitae nostrum delectus in omnis nulla adipisci laudantium enim sit ad! Doloribus, tempora beatae molestias non commodi natus adipisci eveniet eaque, officia vero molestiae iste? Earum ut in dolores nobis neque distinctio ipsam rerum ducimus a quidem architecto harum qui, eligendi ex. Aspernatur, vitae nisi. Quia, quae! Et a itaque fugit officiis ea nesciunt, vero optio nobis! Doloremque aspernatur provident voluptates ipsum dolore? Unde dolor tempore vel earum similique, tempora quas perferendis temporibus dolore, sint harum laudantium quaerat, accusamus rem obcaecati iusto natus voluptatibus nisi magnam quisquam esse. In iusto eaque officiis sed dolor id eum perspiciatis voluptatum suscipit. Voluptatem minus, maxime quibusdam sint assumenda iure! Eligendi amet nisi ea odio eum distinctio quasi corporis itaque? Dolores enim veritatis libero atque facilis, eius aperiam cum, quod deserunt reprehenderit aut voluptatum eveniet possimus iusto consequuntur!
+        </p>
+        <script>
+            
+            // window.addEventListener('load' , () =>{
+            //     let div = document.querySelector("div");
+            //     document.querySelector('span').innerText= scrheight+"px"+ " " + scrwidth+"px";
+            //     document.querySelector('span').innerText= `Window width is ${scrwidth}px and window height is ${scrheight}px (including task bar), window availwidth is ${awidth}px and window availheight is ${aheight}px (excluding task bar) `;
+            //     div.style.backgroundColor='yellow';
+            // })
+            
+            let btn = document.querySelector("#b1");
+            window.addEventListener('click',() => {
+                let scrwidth = screen.width;
+                let awidth = screen.availWidth;
+                let scrheight = screen.height;
+                let aheight = screen.availHeight;
+                let div = document.querySelector("div");
+                // document.querySelector('span').innerText= scrheight+"px"+ " " + scrwidth+"px";
+                document.querySelector('span').innerText= `Window width: ${scrwidth}px 
+                Window height: ${scrheight}px (including task bar) 
+                Window availwidth: ${awidth}px 
+                Window availheight: ${aheight}px (excluding task bar) `;
+                div.style.backgroundColor='yellow';
+
+            })
+        </script>
+    </div>
+</body>
+</html>

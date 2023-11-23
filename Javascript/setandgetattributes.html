@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .parent{
+            background-color: burlywood;
+            border: 2px solid red;
+
+        }
+        /* img{
+            width: 250px;
+            height: 150px;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo esse dolor nisi! Minus non esse illo dolore soluta deserunt tenetur fuga distinctio nemo.</p>
+        <img src="/HTML/a1.png" alt="image" width="250px">
+    <script>
+        let a = document.querySelector("div");
+            a.setAttribute('class','parent');
+        console.log(a.getAttribute('class'));
+        let b = document.querySelector("img");
+            // b.setAttribute('width','250px');
+            // b.setAttribute('height','150px');
+        console.log(b.getAttribute('width'));
+        // console.log(b.getAttribute('height'));
+        console.log(b.getAttribute('src'));
+        
+    </script>
+</body>
+</html>

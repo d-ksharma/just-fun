@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Heading 1</h1>
+        <h1 class="h1">Heading 2</h1>
+        <h1 id="head">Heading 3</h1>
+        <form action="#">
+            <label for="input">update the paragraph
+                <input type="text" id="input" name="input">
+                <button type="button">replace</button>
+            </label>
+        </form>
+        <p class="h1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore incidunt esse impedit et ducimus quasi deleniti vel voluptas doloremque! Perspiciatis, nam veritatis? Ducimus, tempore eveniet nemo quidem eligendi cupiditate quia dolore aperiam veniam, expedita error blanditiis impedit culpa possimus exercitationem!</p>
+    </div>  
+    <script src="jqueryfile/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // alert("jquery is running successfully");
+            // $('h1').css('color','red');
+            // $('.h1').css('color','red');
+            // $('#head').css('text-align','center');
+            // $('#head').css({'text-align':'center','background-color':'red'});
+            let a = $('div').html();
+            // console.log(a);
+            let b = $('div').text();
+            // console.log(b);
+
+            // $('div').html('Prince');
+            $('div p').text('Hi its prince here');
+            
+
+            $('button').click(function(){
+                let result = $('#input').val();
+                $('div p').text(result);
+            });
+
+            let c = $('div p').attr('class');
+            console.log(c);
+            $('div p').attr('class','head');
+            console.log(c);
+           
+            $('#input').val('hi its uday');
+        });
+
+
+    </script>
+</body>
+</html>

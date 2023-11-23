@@ -1,0 +1,21 @@
+h1{
+    background-color: rgb(255, 255, 0);
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-transform: uppercase;
+    color: red ;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    color:black; 
+    text-align: justify; 
+    font-style: italic;
+    font-weight: bold;
+}
+body{
+    background-color: aqua;
+    
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoveaddEventListner</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .container{
+            width: 80%;
+            height: 50vh;
+            background-image: linear-gradient(90deg,black,red,blue,green,yellowgreen,yellow,aqua,lightblue,white,black);
+            border: 2px solid black;
+            display: none;
+        }
+        
+        button{
+            margin: 10px 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <div class="button">
+        <button type="button">Click me</button>
+        <button type="button">Remove me</button>
+    </div>
+    <script>
+        let div = document.querySelector('.container');
+        let btn = document.querySelectorAll('button');
+        btn[0].addEventListener('click', clickme);
+        btn[0].addEventListener('dblclick', ()=>{
+            div.style.cssText = "display:none"
+        });
+        function clickme(){
+            div.style.cssText = "display:block"
+        }
+        btn[1].addEventListener('click',()=>{
+            btn[0].removeEventListener('dblclick',clickme);
+        })
+
+
+    </script>
+</body>
+</html>

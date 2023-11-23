@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let value = Number(prompt("select your default language? 1:English 2:Hindi 3:French 4:Sanskrit"));
+    // switch(value){
+    //     case 1:
+    //     document.write("your language is selected as ENGLISH");
+    //     break;
+    //     case 2:
+    //     document.write("your language is selected as HINDI");
+    //     break;
+    //     case 3:
+    //     document.write("your language is selected as FRENCH");
+    //     break;
+    //     case 4:
+    //     document.write("your language is selected as SANSKRIT");
+    //     break;
+    //     default:
+    //     document.write("invalid input");
+    // }
+
+    // let a = Number(prompt('Enter the first value?'));
+    // let b = Number(prompt('Enter the second value?'));
+    // let c = prompt('Enter the symbol of arithmetic operation to be performed like /*-+%');
+    // switch(c){
+    //     case "/":
+    //     document.write(`the division a/b of values is ${a/b}`);
+    //     break;
+    //     case "*":
+    //     document.write(`the multiplication a*b of values is ${a*b}`);
+    //     break;
+    //     case "-":
+    //     document.write(`the subtraction a-b of values is ${a-b}`);
+    //     break;
+    //     case "+":
+    //     document.write(`the addition a+b of values is ${a+b}`);
+    //     break;
+    //     case "%":
+    //     document.write(`the modulus a%b of values is ${a%b}`);
+    //     break;
+    //     default:
+    //     document.write("invalid input");
+    // }
+
+
+    let a = Number(prompt('Enter the Age?'));
+    switch(true){
+        case (a<12):
+        document.write('you are in childhood');
+        break;
+        case (a<17 && a>=12):
+        document.write('you are not eligible for voting');
+        break;
+        case (a>=18 && a<=30):
+        document.write('You are in your prime age ');
+        break;
+        case (a>100 && a<=31):
+        document.write('You are in your prime age ');
+        
+        
+        default:
+        document.write("be a ghost");
+        
+    }
+
+
+
+    </script>
+</body>
+</html>

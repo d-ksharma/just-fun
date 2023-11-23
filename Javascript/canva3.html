@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            padding: 50px 0px;
+            min-height: 700px;
+            display: flex;
+            justify-content:center;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+        canvas{
+            margin: 10px 0px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Drawing RADIAL GRADIENT using canvas</h1>
+        <canvas id="canva1" width="800" height="500"></canvas>
+    </section>
+    
+    <script>
+        let canva = document.getElementById('canva1');
+        let pen = canva.getContext('2d');
+        let rgrad = pen.createRadialGradient(400,250,200,400,250,100,400,250,60,400,250,60);
+        rgrad.addColorStop(0,'orange');
+        rgrad.addColorStop(0.3,'red');
+        rgrad.addColorStop(0.6,'green');
+        rgrad.addColorStop(1,'blue');
+
+        pen.fillStyle = rgrad;
+        pen.arc(400,250,200,0,2*Math.PI);
+        pen.fill(); 
+
+
+    </script>
+</body>
+</html>

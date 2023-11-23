@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        section{
+            margin: 20px auto;
+            width: 800px;
+            height: 800px;
+            border: 2px solid black;
+            position: relative;
+            /* background-color: aqua; */
+            
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            /* display: inline; */
+            position: absolute;
+        
+        }
+
+       
+        .row2{
+    
+            top:100px;
+        }
+        .row3{
+    
+            top:200px;
+        }
+        .row4{
+    
+            top:300px;
+        }
+        .row5{
+    
+            top:400px;
+        }
+        .row6{
+    
+            top:500px;
+        }
+        .row7{
+    
+            top:600px;
+        }
+        .row8{
+    
+            top:700px;
+        }
+
+
+        #a2,#b1,#c1,#d1,#e1,#f1,#a9,#g1{
+        
+            left: 100px;
+        }
+        #a3,#b2,#c2,#d2,#e2,#f2,#a10,#g2{
+        
+            left: 200px;
+        }#a4,#b3,#c3,#d3,#e3,#f3,#a11,#g3{
+        
+            left: 300px;
+        }#a5,#b4,#c4,#d4,#e4,#f4,#a12,#g4{
+        
+            left: 400px;
+        }#a6,#b5,#c5,#d5,#e5,#f5,#a13,#g5{
+        
+            left: 500px;
+        }#a7,#b6,#c6,#d6,#e6,#f6,#a14,#g6{
+        
+            left: 600px;
+        }#a8,#b7,#c7,#d7,#e7,#f7,#a15,#g7{
+        
+            left: 700px;
+        }
+        
+        /* div:nth-of-type(even){
+            background-color: black;
+        }
+         */
+        .row1:nth-of-type(odd),.row2:nth-of-type(odd),.row3:nth-of-type(even),.row4:nth-of-type(odd),.row5:nth-of-type(even),.row6:nth-of-type(odd),.row7:nth-of-type(even),.row8:nth-of-type(odd){
+            background-color: black;
+        }
+
+        div:hover{
+            background-color: blue;
+            
+        }
+            
+
+    </style>
+</head>
+<body>
+    <section>
+        <div id="a1"  class="row1"></div>
+        <div id="a2" class="row1"></div>
+        <div id="a3" class="row1"></div>
+        <div id="a4" class="row1"></div>
+        <div id="a5" class="row1"></div>
+        <div id="a6" class="row1"></div>
+        <div id="a7" class="row1"></div>
+        <div id="a8" class="row1"></div>
+
+        <div id="a9" class="row2"></div>
+        <div id="a10" class="row2"></div>
+        <div id="a11" class="row2"></div>
+        <div id="a12" class="row2"></div>
+        <div id="a13" class="row2"></div>
+        <div id="a14" class="row2"></div>
+        <div id="a15" class="row2"></div>
+        <div id="a16" class="row2"></div>
+
+        <div id="b1" class="row3"></div>
+        <div  id="b2" class="row3"></div>
+        <div id="b3" class="row3"></div>
+        <div  id="b4" class="row3"></div>
+        <div  id="b5" class="row3"></div>
+        <div  id="b6" class="row3" ></div>
+        <div  id="b7" class="row3"></div>
+        <div  id="b8" class="row3"></div>
+        
+        <div  id="c1" class="row4"></div>
+        <div  id="c2" class="row4"></div>
+        <div  id="c3" class="row4"></div>
+        <div  id="c4" class="row4"></div>
+        <div  id="c5" class="row4"></div>
+        <div  id="c6" class="row4"></div>
+        <div  id="c7" class="row4"></div>
+        <div  id="c8" class="row4"></div>
+        
+        <div  id="d1" class="row5"></div>
+        <div  id="d2" class="row5"></div>
+        <div  id="d3" class="row5"></div>
+        <div  id="d4" class="row5"></div>
+        <div  id="d5" class="row5"></div>
+        <div  id="d6" class="row5"></div>
+        <div  id="d7" class="row5"></div>
+        <div  id="d8" class="row5"></div>
+        
+        <div  id="e1" class="row6"></div>
+        <div  id="e2" class="row6"></div>
+        <div  id="e3" class="row6"></div>
+        <div  id="e4" class="row6"></div>
+        <div  id="e5" class="row6"></div>
+        <div  id="e6" class="row6"></div>
+        <div  id="e7" class="row6"></div>
+        <div  id="e8" class="row6"></div>
+        
+        <div  id="f1" class="row7"></div>
+        <div  id="f2" class="row7"></div>
+        <div  id="f3" class="row7"></div>
+        <div  id="f4" class="row7"></div>
+        <div  id="f5" class="row7"></div>
+        <div  id="f6" class="row7"></div>
+        <div  id="f7" class="row7"></div>
+        <div  id="f8" class="row7"></div>
+        
+        <div  id="g1" class="row8"></div>
+        <div  id="g2" class="row8"></div>
+        <div  id="g3" class="row8"></div>
+        <div  id="g4" class="row8"></div>
+        <div  id="g5" class="row8"></div>
+        <div  id="g6" class="row8"></div>
+        <div  id="g7" class="row8"></div>
+        <div  id="g8" class="row8"></div>
+
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Consrtructor Function</h1>
+    <script>
+        // function StudentInfo(fname,lname,rollno,city,fees=0){
+        //     this.fn = fname;
+        //     this.ln = lname;
+        //     this.rn = rollno;
+        //     this.ct = city;
+        //     this.fe = fees;
+
+        //     this.getdetails = function (){
+        //         return `Student name is ${this.fn} ${this.ln} <br>
+        //         Roll no is ${this.rn} and live in ${this.ct} <br> Fees paid is ${this.fe} `
+        //     }
+        // }
+
+        // const prince = new StudentInfo("Prince","Solanki","99","Mumbai");
+        // const uday = new StudentInfo("Uday","Mahato","100","Mumbai","10000");
+        // console.log(prince);
+        // document.write(prince.getdetails()+"<br><br>");
+        
+        // document.write(uday.getdetails());
+        
+        
+        // NEW CLASS METHOD
+        
+        class StudentInfo{
+            constructor(fname,lname,rollno,city,fees=0){
+                this.fn = fname;
+                this.ln = lname;
+                this.rn = rollno;
+                this.ct = city;
+                this.fe = fees;
+    
+                this.getdetails = function (){
+                    return `Student name is ${this.fn} ${this.ln} <br>
+                Roll no is ${this.rn} and live in ${this.ct} <br> Fees paid is ${this.fe} `
+            }
+            
+            }
+        }
+        const prince = new StudentInfo("Prince","Solanki","99","Mumbai");
+
+        const uday = new StudentInfo("Uday","Mahato","100","Mumbai","10000");
+        console.log(prince);
+        document.write(prince.getdetails()+"<br><br>");
+        document.write(uday.getdetails());
+
+
+
+
+    </script>
+</body>
+</html>

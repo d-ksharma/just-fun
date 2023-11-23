@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="">
+        <div ng-init="fname='editable text....';
+        fruits=['Apple','Banana','Mango','cherry','grapes','pineapple'];
+        count=0;addimg='1.jpg'">
+        Enter your name : <input type="text" ng-model="fname">
+        <p ng-bind="fname"></p>
+        <p>{{fname}}</p>
+        </div>
+
+        <ul>
+            <li ng-repeat="fruit in fruits" ng-click="count=count+1">
+                {{count+" "+fruit}}
+            </li>
+        </ul>
+
+        <!-- <p>
+            <img src="2.jpg" alt="" width="150rem"><br>
+            <img ng-src="{{addimg}}" alt="" width="150rem" ng-mouseover="addimg='2.jpg'">
+        </p> -->
+        
+        <div ng-init="images=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','a1.png']">
+            <ul>
+                <li ng-repeat="image in images">
+                    <img  src="{{image}}" width="20%" >
+                </li>
+            </ul>
+            
+        </div>
+        
+            
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <script>
+    
+    </script>
+</body>
+</html>

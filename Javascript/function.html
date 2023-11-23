@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <p id="input"></p>
+    <script>
+        // function sq(){
+        //     let num = 2**2;
+        //     return num;
+        // }
+        // console.log(sq());
+
+        // function sq2(num,pow){
+        //     num = num**pow;
+        //     return num;
+        // }
+        // console.log(sq2(5,2));
+
+        // let name = function(fname,lname){
+        //     let input = document.getElementById('input');
+        //     input.innerText = `Mr. ${fname} ${lname}`;
+        //     console.log(fname,lname);
+        // }
+        
+        // name("prince","solanki");
+
+        let name2 = function(fname,lname,gender){
+            input = document.getElementById('input');
+            if(gender == "m") {
+                input.innerText = `Mr. ${fname} ${lname}`;
+            }
+            else if(gender == "f"){
+                // input = document.getElementById('input');
+                input.innerText = `Ms. ${fname} ${lname}`;
+            }
+            else{
+                input.innerText = `invalid gender. Go and change your gender FIRST!`
+            }
+        }
+
+        name2("neha","sharma","f");
+
+        // let a = (num1,num2)=>{
+        //     return num = num1*num2;
+
+        // }
+        // console.log(a(2,3));
+        // let b = (num1,num2)=>num = num1*num2;
+        // console.log(b(6,3));
+
+    
+
+        
+        </script>
+</body>
+</html>

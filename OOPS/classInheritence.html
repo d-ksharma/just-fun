@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Mobiles {
+            constructor(name, price) {
+                this.Name = name;
+                this.Price = price;
+            }
+            mobdetails() {
+                return `The name of Mobile Phone is ${this.Name} and price is &#8377;${this.Price}/- ONLY`
+            }
+        }
+
+        class Laps extends Mobiles {
+            constructor(name, price, ram, storage) {
+                super(name, price);
+                this.Ram = ram;
+                this.Storage = storage;
+            }
+            lapdetails() {
+                return `The name of device is ${this.Name} and price will be &#8377;${this.Price}/- ONLY with ram: ${this.Ram} and storage: ${this.Storage} `
+            }
+        }
+        let mob1 = new Mobiles("poco x3 pro", "19000");
+        console.log(mob1);
+        document.write(mob1.mobdetails(), "<br>");
+        let lap1 = new Laps("asus_f15", "65000", "16GB", "1TB");
+        console.log(lap1);
+        document.write(lap1.lapdetails(), "<br>");
+        
+        class Iphone extends Laps {
+            constructor(name, price, ram, storage, color) {
+                super(name, price, ram, storage);
+                this.Color = color;
+            }
+            iphonedetails() {
+                return `${super.lapdetails()} and color is ${this.Color}`
+                // return `The name of Iphone is ${this.Name} and price will be &#8377;${this.Price}/- ONLY with ram :${this.Ram}, storage: ${this.Storage} and color is ${this.Color}`
+            }
+        }
+        let iphone1 = new Iphone("Iphone_14","87000","6GB","256GB","Red");
+        console.log(iphone1);
+        document.write(iphone1.iphonedetails(), "<br>");
+        
+        </script>
+</body>
+
+</html>

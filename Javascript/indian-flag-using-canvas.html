@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Flag</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            padding: 50px 0px;
+            min-height: 700px;
+            display: flex;
+            justify-content:center;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+        canvas{
+            background-color: white;
+            margin: 10px 0px;
+            border: 2px solid black;
+        }
+        #canva2{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Drawing INDIA FLAG using canvas</h1>
+        <canvas id="canva5" width="800" height="500"></canvas>
+    </section>
+    <script>
+        // drawing flag using canva
+        let canva5 = document.getElementById('canva5');
+        let pen5 = canva5.getContext('2d');
+        pen5.strokeStyle="darkblue";
+        pen5.moveTo(0,250);
+        pen5.lineTo(800,250);
+
+        pen5.moveTo(150,0);
+        pen5.lineTo(650,500);
+
+        pen5.moveTo(150,500);
+        pen5.lineTo(650,0);
+
+        pen5.moveTo(275,0);
+        pen5.lineTo(525,500);
+
+        pen5.moveTo(525,0);
+        pen5.lineTo(275,500);
+
+        pen5.moveTo(150,125);
+        pen5.lineTo(650,375);
+
+        pen5.moveTo(150,375);
+        pen5.lineTo(650,125);
+
+        pen5.moveTo(400,0);
+        pen5.lineTo(400,500);
+
+        pen5.lineWidth = "5";
+        pen5.stroke();
+        pen5.fillStyle="orange";
+        pen5.fillRect(0,0,800,166.67);
+        pen5.fillStyle="green";
+        pen5.fillRect(0,333.33,800,166.67);
+        pen5.globalCompositeOperation = 'xor';
+        pen5.fillStyle="white";
+        pen5.fillRect(0,166.67,800,166.67);
+        pen5.fillStyle="blue";
+        pen5.arc(400,250,80,0.5*Math.PI,1.5*Math.PI);
+        pen5.arc(400,250,80,1.5*Math.PI,0.5*Math.PI);
+        pen5.fill();
+        pen5.beginPath();
+        pen5.globalCompositeOperation = 'source-over';
+        pen5.strokeStyle = "blue";
+        pen5.arc(400,250,83,0,2*Math.PI);
+        pen5.stroke();
+        
+    </script>
+</body>
+</html>

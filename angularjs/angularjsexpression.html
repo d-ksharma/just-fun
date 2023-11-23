@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div ng-app="">
+        <div ng-init="fname='Prince';lname='Solanki'">
+            <h2>My first expression:{{5+5}}</h2>
+            <h2>{{fname+" "+lname}}</h2>
+        </div>
+            <hr>
+
+            <div ng-init="fruits=['Apple',true,200]">
+                <h1></h1>
+                <p>The fruit is :<strong>{{fruits[0]}}</strong></p>
+                <p>Is it available :<strong>{{fruits[1]}}</strong></p>
+                <p>Price of <strong>{{fruits[0]}}</strong>: <strong>&#8377;{{fruits[2]}}</strong></p>
+            </div>
+            <hr>
+
+            <div ng-init="person={fname:'Prince',lname:'Solanki',age:22,city:'Mumbai'}">
+                <p>{{'My name is '+person.fname+' '+person.lname}}</p>
+                <p>{{'Age: '+person.age}}</p>
+                <p>{{'I live in '+ person.city}}</p>
+            </div>
+            <hr>
+
+            <div ng-init="person1={
+                user:['prince','uday','aditya'],
+                comesfrom:{city:['Mumbai','Pune','Delhi']}
+                }">
+                <p>My name of students :  {{person1.user}}</p>
+                <p>{{'Came from: '+person1.comesfrom.city[1]}}</p>
+                
+            </div>
+
+        
+    </div>
+        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- <script src="angular/angular.min.js"></script> -->
+    <script>
+
+    </script>
+</body>
+
+</html>

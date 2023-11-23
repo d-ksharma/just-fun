@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-shadow: 2px 2px 5px blue;
+            
+
+        }
+        h2{
+            text-align: center;
+            margin: 5px;
+        }
+        fieldset{
+            margin: 30px;
+            height: 650px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 15px blue;
+        }
+        form{
+            width: 40%;
+            margin: auto;
+        }
+        input  , textarea , button{
+            padding: 5px;
+            outline: none;
+            box-shadow: 10px 10px 15px blue;
+
+        }
+        button{
+            width: 100px;
+        }
+        div{
+            border: 1px solid red;
+            border-left: 5px solid red;
+            min-height: 100px;
+        }
+        label{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <h2>Personal Details Form</h2>
+            <label for="firstname">First-Name :
+                <input type="text" placeholder="Enter your firstname" id="firstname">
+            </label>
+            <label for="lastname">Last-Name :
+                <input type="text" placeholder="Enter your lastname" id="lastname">
+            </label>
+            <label for="city">City:
+                <select name="city" id="city">
+                    <option value="mumbai">Mumbai</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="pune">Pune</option>
+                    <option value="bangalore">Bangalore</option>
+                </select>
+            </label>
+            <label for="address">Address :
+                <textarea name="address" id="address" cols="30" rows="10" placeholder="Enter your Address"></textarea>
+            </label>
+            <label for="caddress">Confirm-Address :
+                <textarea name="address" id="caddress" cols="30" rows="10" placeholder="Confirm your Address"></textarea>
+            </label>
+            <button type="submit" id="submit">Submit</button>
+        </fieldset>
+    </form>
+    <div id="inputtracker"></div>
+
+    <script>
+      
+        let trackerdiv = document.getElementById('inputtracker');
+        let firstname = document.getElementById('firstname');
+        let lastname = document.getElementById('lastname');
+        let city = document.getElementById('city');
+        let address = document.getElementById('address');
+        let caddress = document.getElementById('caddress');
+
+        let lfn = document.getElementsByTagName('label')[0];
+        let lln = document.getElementsByTagName('label')[1];
+        let lc = document.getElementsByTagName('label')[2];
+        let lad = document.getElementsByTagName('label')[3];
+        let lcad = document.getElementsByTagName('label')[4];
+        let form = document.getElementsByTagName('form')[0];
+
+
+        firstname.addEventListener('focus',()=>{
+            firstname.style.backgroundColor='#D9F9F4';
+            firstname.style.border='2px solid green';
+            lfn.style.transform="scale(1.2)";
+            
+        });
+        firstname.addEventListener('select',()=>{
+            firstname.style.backgroundColor='black';
+            firstname.style.color='yellowgreen';   
+        });
+        firstname.addEventListener('blur',()=>{
+            firstname.style.backgroundColor='';
+            firstname.style.color='';   
+            firstname.style.border='';
+            lfn.style.transform="scale(1)";
+        });
+        firstname.addEventListener('change',()=>{
+            let a = firstname.value;
+            trackerdiv.innerHTML += a + '<br>';
+        });
+        
+        
+        
+        lastname.addEventListener('focus',()=>{
+            lastname.style.backgroundColor='#D9F9F4';
+            lastname.style.border='2px solid green';
+            lln.style.transform="scale(1.2)";
+        });
+        lastname.addEventListener('blur',()=>{
+            lastname.style.backgroundColor='';
+            lastname.style.border='';
+            lln.style.transform="scale(1)";
+        });
+        lastname.addEventListener('change',()=>{
+            let a = lastname.value;
+            trackerdiv.innerHTML += a + '<br>';
+        });
+        
+        city.addEventListener('focus',()=>{
+            city.style.backgroundColor='#D9F9F4';
+            city.style.border='2px solid green';
+            
+            lc.style.transform="scale(1.2)";
+        });
+        city.addEventListener('blur',()=>{
+            city.style.backgroundColor='';
+            city.style.border='';
+            lc.style.transform="scale(1)";
+        });
+        city.addEventListener('change',()=>{
+            let a = city.value;
+            trackerdiv.innerHTML += a + '<br>';
+        });
+        
+        
+        address.addEventListener('focus',()=>{
+            address.style.backgroundColor='#D9F9F4';
+            address.style.border='2px solid green';
+            
+            lad.style.transform="scale(1.2)";
+        });
+        address.addEventListener('blur',()=>{
+            address.style.backgroundColor='';
+            address.style.border='';
+            lad.style.transform="scale(1)";
+        });
+        address.addEventListener('change',()=>{
+            let a = address.value;
+            trackerdiv.innerHTML += a + '<br>';
+        });
+        
+        
+        caddress.addEventListener('focus',()=>{
+            caddress.style.backgroundColor='#D9F9F4';
+            caddress.style.border='2px solid green';
+            lcad.style.transform="scale(1.2)";
+        });
+        caddress.addEventListener('blur',()=>{
+            caddress.style.backgroundColor='';
+            caddress.style.border='';
+            lcad.style.transform="scale(1)";
+        });
+        caddress.addEventListener('change',()=>{
+            let a = caddress.value;
+            trackerdiv.innerHTML += a + '<br>';
+        });
+
+
+
+        // address.addEventListener('keyup',()=>{
+        //     caddress.innerHTML= address.value;
+        // });
+        
+        address.addEventListener('input',()=>{
+            caddress.innerHTML= address.value;
+        });
+
+        form.addEventListener('submit',()=>{
+            alert('your form is submitted');
+        });
+    </script>
+</body>
+</html>

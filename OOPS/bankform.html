@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        fieldset{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 10px;
+        }
+        button{
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="cform">
+        <fieldset>
+            <legend>Create New Account</legend>
+            <label for="accname">Account Name:
+                <input type="text" placeholder="Account Name" id="accname" name="accountName" required >
+            </label>
+            <label for="accbal">Account Balance:
+                <input type="text" placeholder="Account Balance" id="accbal" name="accountBalance" >
+            </label>
+            <button type="submit" id="createacc">CREATE</button>
+        </fieldset>
+    </form>
+    <form action="" name="dform">
+        <fieldset>
+            <legend>Deposit</legend>
+            <label for="daccno">Account No:
+                <input type="text" placeholder="Account Number" id="daccno" name="daccno" required>
+            </label>
+            <label for="damt">Deposit Amount:
+                <input type="text" placeholder="Deposit Amount" id="damt" name="damt" required>
+            </label>
+            <button type="submit" id="deposit">DEPOSIT</button>
+        </fieldset>
+    </form>
+    <form action="" name="wform">
+        <fieldset>
+            <legend>Withdraw</legend>
+            <label for="waccno">Account No:
+                <input type="text" placeholder="Account Number" id="waccno" name="waccno" required>
+            </label>
+            <label for="wamt">Withdraw Amount:
+                <input type="text" placeholder="Withdraw Amount" id="wamt" name="wamt" required>
+            </label>
+            <button type="submit" id="withdraw">WITHDRAW</button>
+        </fieldset>
+    </form>
+    <script>
+        class BankSystem{
+            constructor(accname,accno,bal = 0){
+                this.accountName = accname;
+                this.accountNumber = accno;
+                this.accountBalance = bal;
+            }
+            
+            deposit(amt){
+                this.accountBalance += amt;
+            }
+            withdraw(amt){
+                
+                if(this.accountBalance == 0 || this.accountBalance - amt < 0){
+                    console.log('Cannot withdraw because of insufficient Balance!');
+                    throw new Error('not enough balance.')
+                }
+                else{
+                    this.accountBalance -= amt;
+                }
+            }
+        }
+        let cform = document.getElementsByTagName('form')[0];
+        let dform = document.getElementsByTagName('form')[1];
+        let wform = document.getElementsByTagName('form')[2];
+        let accname = document.getElementById('accname');
+        let accbal = document.getElementById('accbal');
+        const acc =[];
+        let accno = 0;
+        cform.addEventListener('submit',function(e){
+            e.preventDefault();
+            accno +=1;
+            let a = new BankSystem(accname.value,accno,Number(accbal.value));
+            acc.push(a);
+            console.table(acc);
+        })
+
+        let daccno = document.dform.daccno;
+        let damt = document.dform.damt;
+        
+        dform.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            const findacc = acc.find((a)=>{
+                return a.accountNumber === Number(daccno.value);
+            })
+            findacc.deposit(Number(damt.value));
+            // findacc.deposit(+damt.value);
+            console.table(acc);
+            
+        })
+        
+        let waccno = document.wform.waccno;
+        let wamt = document.wform.wamt;
+        
+        wform.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            const findacc = acc.find((a)=>{
+                return a.accountNumber === Number(waccno.value);
+            })
+            // findacc.withdraw(Number(wamt.value));
+            findacc.withdraw(wamt.value);
+            console.table(acc);
+
+        })
+        </script>
+</body>
+</html>

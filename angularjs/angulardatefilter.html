@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>angular date filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+
+</head>
+<body ng-controller="myControl">
+    <!-- <h3>For Year</h3> -->
+    <h3>For Year</h3>
+    {{date | date:'yyyy'}}<br>
+    {{date | date:'y'}}<br>
+    {{date | date:'yy'}}<br>
+    <br><br>
+    <!-- <h3>For Months</h3> -->
+    <h3>For Months</h3>
+    {{date | date:'MMMM'}}<br>
+    {{date | date:'MMM'}}<br>
+    {{date | date:'MM'}}<br>
+    {{date | date:'M'}}<br>
+    <br><br>
+    <!-- <h3>For dates</h3> -->
+    <h3>For dates</h3>
+    {{date | date:'dd'}}<br>
+    {{date | date:'d'}}<br>
+    <br><br>
+    <!-- <h3>For days</h3> -->
+    <h3>For days</h3>
+    {{date | date:'EEEE'}}<br>
+    {{date | date:'EEE'}}<br>
+    <br><br>
+    <!-- <h3>date format</h3> -->
+    <h3>date format</h3>
+    {{date | date:'dd / MM / y'}}<br>
+    {{date | date:'dd - MM - y'}}<br>
+    {{date | date:'dd : MM : y'}}<br>
+    <br><br>
+    <!-- <h3>for minutes</h3> -->
+    <h3>for minutes</h3>
+    {{date | date:'mm'}}<br>
+    {{date | date:'m'}}<br>
+    <br><br>
+    <!-- <h3>for 24 hr format it start with 0 -23</h3> -->
+    <h3>for 24 hr format it start with 0 -23</h3>
+    {{date | date:'HH'}}<br>
+    {{date | date:'H'}}<br>
+    <br><br>
+    <!-- <h3>for 12 hr format </h3> -->
+    <h3>for 12 hr format </h3>
+    {{date | date:'hh'}}<br>
+    {{date | date:'h'}}<br>
+    <br><br>
+    <!-- <h3>for seconds </h3> -->
+    <h3>for seconds </h3>
+    {{date | date:'ss'}}<br>
+    {{date | date:'s'}}<br>
+    <br><br>
+    <!-- <h3>for milliseconds </h3> -->
+    <h3>for milliseconds </h3>
+    {{date | date:'sss'}}<br>
+    <br><br>
+    <!-- <h3>for am or pm </h3> -->
+    <h3>for am or pm </h3>
+    {{date | date:'a'}}<br>
+    <br><br>
+    <!-- <h3>predefined date and time format</h3> -->
+    <h3>predefined date and time format</h3>
+    {{date | date:'short'}}<br>
+    {{date | date:'shortDate'}}<br>
+    {{date | date:'medium'}}<br>
+    {{date | date:'mediumDate'}}<br>
+    {{date | date:'longDate'}}<br>
+    {{date | date:'fullDate'}}<br>
+
+
+    {{date | date:'shortTime'}}<br>
+    {{date | date:'mediumTime'}}<br>
+   
+ 
+    
+    
+
+    <script>
+        let app = angular.module("myApp",[]);
+        app.controller("myControl",["$scope",function($scope){
+            $scope.date = new Date();
+        }]);
+    </script>
+</body>
+</html>

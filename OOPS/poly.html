@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class BankSystem{
+            constructor(accname,accno,bal){
+                this.accountName = accname;
+                this.accountNumber = accno;
+                this.accountBalance = bal;
+            }
+            
+            deposit(amt){
+                this.accountBalance += amt;
+            }
+            withdraw(amt){
+                
+                if(this.accountBalance == 0 || this.accountBalance - amt < 0){
+                    console.log('Cannot withdraw because of insufficient Balance!');
+                    throw new Error('not enough balance.')
+                }
+                else{
+                    this.accountBalance -= amt;
+                }
+            }
+        }
+
+        
+        class CurrentAcc extends BankSystem{
+            constructor(accname,accno,bal,creditcard,loan,acctype ="Current"){
+                super(accname,accno,bal);
+                this.Credit = creditcard;
+                this.Loan = loan;
+                this.Acctype = acctype;
+                
+            }
+            
+            deposit(amt){
+                super.deposit(amt);
+            }
+            withdraw(amt){
+                super.withdraw(amt);
+            }
+        }
+        class SavingsAcc extends BankSystem{
+            constructor(accname,accno,bal,debitcard,atm,acctype ="Savings"){
+                super(accname,accno,bal);
+                this.Debit = debitcard;
+                this.Atm = atm;
+                this.Acctype = acctype;
+            }
+            
+            deposit(amt){
+                super.deposit(amt);
+            }
+            withdraw(amt){
+                super.withdraw(amt);
+            }
+        }
+
+        let bankdb = [];
+        console.log(bankdb);
+        let acc1 = new SavingsAcc("aditya",101,0,"yes","yes");
+        let acc2 = new SavingsAcc("prince",102,10,"yes","no");
+        bankdb.push(acc1);
+        bankdb.push(acc2);
+        let acc3 = new CurrentAcc("uday",103,20,"yes","no");
+        let acc4 = new CurrentAcc("prathmesh",104,30,"yes","yes");
+        bankdb.push(acc3);
+        bankdb.push(acc4);
+
+        console.table(bankdb);
+        
+        acc1.deposit(200);
+        console.table(bankdb);
+        
+        
+        acc4.deposit(400);
+        console.table(bankdb);
+        
+        // acc4.withdraw(500);
+        // console.table(bankdb);
+       
+
+       
+    </script>
+</body>
+</html>   

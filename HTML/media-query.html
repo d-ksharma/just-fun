@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: black;
+        
+        }
+        div{
+            width: 80%;
+            height: 30%;
+            display: flex;
+            /* gap: 20px; */
+            background-color: black;
+            border: 2px solid red;
+            margin: 20px 0;
+            align-items: center;
+        }
+        img{
+            width: 30vw; 
+            height: auto;
+        }
+        p{
+            text-align: justify;
+            margin:20px 25px;
+            color: aliceblue;
+            /* height: auto; */
+            
+        }  
+        
+        @media (max-width:749px) {
+           
+            div{
+                width: 80%;
+                flex-direction: column;
+                height: auto;
+                align-items: center;
+                margin-top: 50px;
+                border-radius: 40px 40px 40px 0px;
+                outline: 6px solid green;
+                outline-offset: 10px;
+            }
+            div img{
+                width: 70%;
+                margin-top: 20px;
+                border: 1px solid red;
+                border-radius: 10px;
+                outline: 6px solid green;
+                outline-offset: 10px;
+            }
+            div p{  
+                width: 100%;
+                padding: 0.5rem;
+            }
+           
+        }
+        @media (orientation:portrait){
+            body{
+            background-color: white;
+            }
+            
+        }
+
+        @media (orientation:landscape){
+            body{
+            background-color: red;
+            }
+            
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div>
+        <img src="a1.png" alt="image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores eius, quidem labore corporis cum deserunt magni praesentium doloribus ipsa reprehenderit dicta sunt natus tempora blanditiis eveniet illo? Porro cumque aspernatur, sequi facilis totam sint quis quibusdam quaerat maiores dolorem, ea, alias eius! Cupiditate incidunt iure cumque accusantium quod dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque optio numquam esse enim, corrupti ducimus illum obcaecati unde. </p>
+    </div>
+    <div>
+        <img src="a1.png" alt="image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores eius, quidem labore corporis cum deserunt magni praesentium doloribus ipsa reprehenderit dicta sunt natus tempora blanditiis eveniet illo? Porro cumque aspernatur, sequi facilis totam sint quis quibusdam quaerat maiores dolorem, ea, alias eius! Cupiditate incidunt iure cumque accusantium quod dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque optio numquam esse enim, corrupti ducimus illum obcaecati unde.</p>
+
+    </div>
+    <div>
+        <img src="a1.png" alt="image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores eius, quidem labore corporis cum deserunt magni praesentium doloribus ipsa reprehenderit dicta sunt natus tempora blanditiis eveniet illo? Porro cumque aspernatur, sequi facilis totam sint quis quibusdam quaerat maiores dolorem, ea, alias eius! Cupiditate incidunt iure cumque accusantium quod dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque optio numquam esse enim, corrupti ducimus illum obcaecati unde.</p>
+
+    </div>
+</body>
+</html>

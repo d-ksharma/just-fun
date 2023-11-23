@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom
+    </title>
+</head>
+<body>
+    <div class="parent" id ="parent">
+        <h1 class="child" id ="c1">DOM</h1>
+        <p class="child" id ="c2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt perferendis atque, exercitationem similique accusantium aut maiores necessitatibus ipsa excepturi? Vel unde commodi molestias praesentium dolor minus voluptate? Culpa eaque incidunt ab cupiditate reiciendis ad repellendus corporis magni dignissimos excepturi, beatae natus odit veritatis! Non aliquam labore at iste doloremque rerum.</p>
+        <button type="button" class="child" id ="c3">CLICK ME</button>
+    </div>
+    <script>
+        // let a = document.getElementsByTagName("div");
+        // let b = document.getElementsByTagName("h1");
+        // let c = document.getElementsByTagName("p");
+        // let d = document.getElementsByTagName("button");
+        // console.log(a[0]);
+        // console.log(b[0]);
+        // console.log(c[0]);
+        // console.log(d[0]);
+        
+
+        // const a = document.getElementsByClassName("parent");
+        // console.log(a[0]);
+        // const b = document.getElementsByClassName("child");
+        // console.log(b[0],b[1],b[2]);
+
+        // const a = document.getElementById("parent");
+        // const b = document.getElementById("c1");
+        // const c = document.getElementById("c2");
+        // const d = document.getElementById("c3");
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+        // console.log(d);
+
+        // const a = document.querySelectorAll("div");
+        // const b = document.querySelector(".child");
+        // const c = document.querySelector("#c2");
+        // const d = document.querySelector("#c3");
+
+        // console.log(a[0]);
+        // console.log(b);
+        // console.log(c);
+        // console.log(d);
+
+        // let a = document.querySelector(".parent #c3");
+        // console.log(a);
+        let a = document.querySelector("div");
+        // console.log(a.parentNode);
+        // console.log(a.innerHTML);
+        // console.log(a.innerText = "hi its prince here");
+        a.style.cssText= "color:white";
+        a.style.backgroundColor="red";
+        a.style.border="5px solid black";
+        a.style.borderRadius="10px";
+
+        // let b = document.querySelector(".parent");
+        // console.log(b.childNodes[5]);
+        
+    </script>
+</body>
+</html>

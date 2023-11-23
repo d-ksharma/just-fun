@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        div{
+            border: 5px solid black;
+            outline: 5px solid blueviolet;
+            outline-offset: 5px;
+            border-radius: 10px;
+            width:700px;
+            height: 340px;
+            margin: 20px 70px 20px ;
+            display: inline-block;
+        }
+
+        .a1{
+            background-image:linear-gradient(to right,green,yellow,orange,red,blue,black);
+        }
+
+        .a2{
+            background-image:linear-gradient(45deg,green,yellow,red,blue,black);
+        }
+
+        .a3{
+            background-image:repeating-linear-gradient(black,yellow 10%,black 20%);
+        }
+
+        .a4{
+            background-image:repeating-linear-gradient(45deg,green,yellow 10%,red 20%);
+        }  
+        
+        .a5{
+            background-image:radial-gradient(green,yellow,red );
+            background-image:radial-gradient(green 20%,yellow 30%,red 70% );
+        }
+
+        .a6{
+            background-image:radial-gradient(circle,green 20%,yellow 30%,red 70%  );
+        }
+        
+       
+
+    </style>
+</head>
+<body>
+    <div class="a1"></div>
+    <div class="a2"></div>
+    <div class="a3"></div>
+    <div class="a4"></div>
+    <div class="a5"></div>
+    <div class="a6"></div>
+</body>
+</html>

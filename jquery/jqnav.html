@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            height: 40px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+        ul{
+            display: flex;
+            gap: 50px;
+        }
+        li{
+            list-style: none;
+            color: white;
+            /* transition: all 0.5s ease; */
+       
+        }
+        a{
+            /* color: white; */
+            text-decoration: none;
+            color:inherit;
+        }
+        .active{
+            border-bottom: 3px solid yellow;
+            /* text-shadow: 1px 1px 5px wheat; */
+            color: yellow;
+        }
+      
+        /* .a{
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li  class="active"><a href="#" class="a b">HOME</a></li>
+                <li><a href="#" class="a">SERVICES</a></li>
+                <li><a href="#" class="a">ABOUT US</a></li>
+                <li><a href="#" class="a">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="jqueryfile/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // console.log('its working');
+            $('ul li').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                
+            });
+         });
+    </script>
+</body>
+</html>

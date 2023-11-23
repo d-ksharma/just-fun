@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stringfunction</title>
+</head>
+<body>
+    <script>
+        let str = "A javascript is a Scripting language";
+        // console.log(str.charAt(28));
+        // console.log(str.search('is'));
+        // console.log(str.search('Script'));
+        // console.log(str.search(/lang/));
+
+        // console.log(str.match('Script'));
+        // document.write(str.match(/rip/g,"<br>"));
+        // document.write(str.match(/s/gi,"<br>"));
+        // document.write(str.replace('Scripting','Programming'));
+    
+        let newstr = str.substr(18,9);
+        console.log(newstr,newstr.length);
+        let newstring = str.substring(18,27);
+        console.log(newstring,newstring.length);
+        newstr = str.substr(-8,4);
+        console.log(newstr,newstr.length);
+
+        let a = ' prince ';
+        console.log(a,a.length);
+        console.log(a.trim(),a.trim().length);
+        
+
+
+    </script>
+</body>
+</html>

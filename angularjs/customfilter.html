@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: lightskyblue;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+        table{
+            background: wheat;
+            border: 2px solid red;
+            border-radius: 5px;
+            border-spacing:10px ;
+            width: 50%;
+        }
+        th,td{
+            
+            border: 1px solid red;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        td:hover{
+            background: black;
+            color: aliceblue;
+            transition: all 300ms ease;
+        }
+    </style>
+</head>
+<body ng-controller="emp">
+    <table >
+        <caption>Table 1</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in datas">
+                <td>{{data.ID}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.City}}</td>
+                <td>{{data.Gender}}</td>
+                <td>{{data.Age}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table >
+        <caption>Table 2</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in datas">
+                <td>{{data.ID}}</td>
+                <td>{{data.Name | myCap}}</td>
+                <td>{{data.City}}</td>
+                <td>{{data.Gender | myfilter}}</td>
+                <td>{{data.Age}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <h2>
+        <ul>
+            <li ng-repeat="name in names"> 
+                {{name | myCap}}<hr>
+            </li>
+        </ul>
+    </h2>
+    </div>
+
+    <script>
+        let app = angular.module("myApp",[]);
+        app.controller("emp",["$scope",function($scope){
+        $scope.datas=[
+            {   
+                ID:1,
+                Name:"prince",
+                City:"Bhayander",
+                Gender:"Male",
+                Age:22
+            },
+            {
+                ID:2,
+                Name:"uday",
+                City:"Virar",
+                Gender:"Male",
+                Age:21
+            },
+            {
+                ID:3,
+                Name:"prerna",
+                City:"Mumbai",
+                Gender:"Female",
+                Age:16
+            },
+            {
+                ID:4,
+                Name:"aditya",
+                City:"Dahnu",
+                Gender:"Male",
+                Age:23
+            }
+        ];
+        
+        $scope.names = ["prince","aditya","uday","prathmesh","dilip","shivam","navnit"];
+
+        $scope.myFilterOfOrder = function(x){
+            $scope.order = x; 
+            
+        }  
+        
+        
+        
+        }]);
+
+        app.filter("myfilter",function(){
+            return function(Gender){
+                // switch(Gender){
+                //     case "Male":
+                //         return "M";
+                //     case "Female":
+                //         return "F";    
+                // }
+                if(Gender==="Male"){
+                    return "M";
+                }else{
+                    return "F";
+                }
+            }
+        });
+
+        app.filter("myCap",function(){
+            return function(x){
+                let i , c , txt ="";
+                for(i=0;i<x.length;i++){
+                    c=x[i];
+                    if(i===0){
+                        c=c.toUpperCase();
+                    }
+                    txt+=c;
+                }
+                return txt;
+            }
+        });
+    </script>
+</body>
+</html>

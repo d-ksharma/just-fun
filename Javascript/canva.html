@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        .container{
+            width: 80%;
+            border: 5px solid white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+        #div1{
+            padding: 50px 0px;
+            min-height: 700px;
+            display: flex;
+            justify-content:center;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            background-image:linear-gradient(180deg, green,yellow,orange,red,blue);
+
+        }
+        .container h1{
+            font-size: 2rem;
+
+        }
+        p{
+            font-size: 1.3rem;
+        }
+        #div1 section h1{
+            text-align: center;
+            font-size: 2rem;
+
+        }
+        canvas{
+            margin: 10px 0px;
+            border: 2px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div class="container">
+            <h1>Html Canvas</h1>
+            <h1>What is html canva?</h1>
+            <p>The html canvas is used to draw graphics, on the fly ,via scripting(usally JS)
+            </p>
+            <p>The canva element is only a container for graphics . You must use a script to actually draw the graphics
+            </p>
+            <p>Canvas has several methods for drawing paths, boxes, circles ,text and adding images
+            </p>
+        </div>
+        <section>
+            <h1>Drawing a rectangle using canvas</h1>
+            <canvas id="canva1" width="500" height="300"></canvas>
+        </section>
+        <section>
+            <h1>Drawing a Mario Castle using canvas</h1>
+            <canvas id="canva3" width="500" height="300"></canvas>
+        </section>
+        <section>
+            <h1>Drawing a Circles using canvas</h1>
+            <canvas id="canva2" width="600" height="300"></canvas>
+        </section>
+        <section>
+            <h1>Drawing a Moon using canvas</h1>
+            <canvas id="canva4" width="500" height="300"></canvas>
+        </section>
+        <section>
+            <h1>Drawing a YinYang using canvas</h1>
+            <canvas id="canva5" width="500" height="300"></canvas>
+        </section>
+
+    </div>
+    <script>
+        // Drawing a rectangle using canvas
+        let canva = document.getElementById('canva1');
+        let pen = canva.getContext('2d');
+        // pen.fillStyle = "black";
+        pen.fillRect(75,50,350,200);
+        
+        pen.strokeStyle = "white";
+        pen.strokeRect(150,100,200,100);
+
+        pen.clearRect(225,125,50,50);
+        
+        
+        
+        // Drawing a Mario Castle using canvas
+        let canva3 = document.getElementById('canva3');
+        let pen3 = canva3.getContext('2d');
+        pen3.fillRect(50,50,400,250);
+        pen3.clearRect(100.142,50,57.142,60);
+        pen3.clearRect(214.284,50,57.142,60);
+        pen3.clearRect(328.568,50,57.142,60);
+        pen3.clearRect(200,190,100,150);
+
+
+
+
+
+        
+        // Drawing a Circles using canvas
+        let canva2 = document.querySelector('#canva2');
+        let pen2 = canva2.getContext('2d');
+        pen2.beginPath();
+        pen2.fillStyle="black";
+        pen2.arc(150,150,140,0,2*Math.PI);
+        pen2.fill();
+        pen2.beginPath();
+        pen2.fillStyle="black";
+        pen2.arc(450,150,150,0,2*Math.PI);
+        pen2.fill();
+        pen2.beginPath();
+        pen2.fillStyle="green";
+        pen2.fillRect(412.5,25,75,250);
+        pen2.fillRect(325,112.5,250,75);
+        
+        pen2.beginPath();
+        pen2.fillStyle="white";
+        pen2.arc(150,150,120,0,2*Math.PI);
+        pen2.fill();
+        pen2.beginPath();
+        pen2.fillStyle="green";
+        pen2.arc(150,150,100,0,2*Math.PI);
+        pen2.fill();
+        pen2.beginPath();
+        pen2.fillStyle="violet";
+        pen2.arc(150,150,80,0,2*Math.PI);
+        pen2.fill();
+        pen2.beginPath();
+        pen2.fillStyle="blue";
+        pen2.arc(150,150,60,0,2*Math.PI);
+        pen2.fill();
+        pen2.beginPath();
+        pen2.fillStyle="yellow";
+        pen2.arc(150,150,40,0,2*Math.PI);
+        pen2.fill();
+        pen2.beginPath();
+        pen2.fillStyle="red";
+        pen2.arc(150,150,20,0,2*Math.PI);
+        pen2.fill();
+
+        // Drawing a Moon using canvas
+        let canva4 = document.getElementById('canva4');
+        let pen4 = canva4.getContext('2d');
+        pen4.fillRect(0,0,500,300);
+        pen4.beginPath();
+        pen4.fillStyle="white";
+        pen4.arc(250,150,140,0,2*Math.PI);
+        pen4.fill();
+        pen4.beginPath();
+        pen4.fillStyle="black";
+        pen4.arc(175,100,100,0,2*Math.PI);
+        pen4.fill();
+        
+        // Drawing a YinYang using canvas
+        let canva5 = document.getElementById('canva5');
+        let pen5 = canva5.getContext('2d');
+        pen5.beginPath();
+        pen5.fillStyle="white";
+        pen5.arc(250,150,140,1.5*Math.PI,0.5*Math.PI);
+        pen5.fill();
+        pen5.beginPath();
+        pen5.fillStyle="black";
+        pen5.arc(250,150,140,0.5*Math.PI,1.5*Math.PI);
+        pen5.fill();
+        pen5.beginPath();
+        pen5.fillStyle="white";
+        pen5.arc(250,80,70,0,2*Math.PI);
+        pen5.fill();
+        pen5.beginPath();
+        pen5.fillStyle="black";
+        pen5.arc(250,220,70,0,2*Math.PI);
+        pen5.fill();
+        pen5.beginPath();
+        pen5.fillStyle="black";
+        pen5.arc(250,80,25,0,2*Math.PI);
+        pen5.fill();
+        pen5.beginPath();
+        pen5.fillStyle="white";
+        pen5.arc(250,220,25,0,2*Math.PI);
+        pen5.fill();
+        
+    </script>
+</html>

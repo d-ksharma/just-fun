@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        #div2{
+            width: 10%;
+            height: 20vh;
+            /* background-color: aqua; */
+            margin-top: 10px;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <button type="button" id="btn1">RIGHT</button>
+        <button type="button" id="btn2">LEFT</button>
+        <button type="button" id="btn3">DOWN</button>
+        <button type="button" id="btn4">UP</button>
+    </div>
+    <div id="div2">
+        <img src="running.gif" alt="">
+    </div>
+    <script src="jqueryfile/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            console.log('its working');
+            $('#btn1').click(function(){
+                $('#div2').animate({'left':'+=100%'},2000,function(){
+                    // alert('animation done');
+                }).css('transform','rotateY(0deg)');
+                console.log('moving right 10% of screen');
+            });
+            $('#btn2').click(function(){
+                $('#div2').animate({'left':'-=100%'},2000).css('transform','rotateY(180deg)');
+                console.log('moving left 10% of screen');
+            });
+            $('#btn3').click(function(){
+                $('#div2').css('transform','rotateZ(90deg)').animate({'top':'+=70%'},1000);
+                console.log('moving down 10% of screen');
+            });
+            $('#btn4').click(function(){
+                $('#div2').css('transform','rotateZ(270deg)').animate({'top':'-=70%'},1000);
+                console.log('moving up 10% of screen');
+            });
+        });
+    </script>
+</body>
+</html>

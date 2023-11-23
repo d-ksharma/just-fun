@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: aquamarine;
+        }
+        div{
+            width: 90%;
+            border: 10px double black;
+            padding: 50px;
+            background-color: bisque;
+            border-radius: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>JQuery</h1>
+    <pre>
+        Its a javascript library.
+        With the help of JQuery we can easily perform CSS animation , DOM manipulation and DOM traversing with less code.
+        JQuery main intention is write less and do more.
+    </pre> -->
+    <section>
+        <div class="prince">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, corrupti.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, corrupti.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, corrupti.</div>
+    </section>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+    <script src="jqueryfile/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        //     alert("jquery is running successfully")
+        // });
+        // $('div:eq(0)').css('color','red');
+        // $('div:lt(2)').css('color','green');
+        // $('div:gt(0)').css('color','blue');
+        // $('*').css('color','orange');
+        // $('.prince').css('color','yellow',).css('background-color','black');
+        $('section div:last-child').css('text-align','center');
+        $('section div:nth-of-type(2)').css('text-align','center');
+        $('div:even').css('background-color','yellow');
+        $('div:odd').css('background-color','blue'); 
+    </script>
+</body>
+</html>

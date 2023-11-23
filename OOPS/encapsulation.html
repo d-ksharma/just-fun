@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Bank {
+            
+            #Bal = 0;
+            constructor(cname,acno,bal=0){
+                this.Cname = cname;
+                this.Acno = acno;
+                this.#Bal = bal;
+                
+            }
+            
+            #deposit(amt){
+                if(typeof amt != typeof this.#Bal){
+                    alert('this is not acceptable');
+                }
+                else{
+                    this.#Bal += amt; 
+                }
+            }
+
+            #withdraw(amt){
+                if(typeof amt != typeof this.#Bal){
+                    alert('this is not acceptable');
+                }
+                else if (amt>this.#Bal){
+                    alert('Insufficient Balance');
+                }
+                else{
+                    this.#Bal -= amt;
+                }
+            }
+
+            set cashier_d(amt){
+                return this.#deposit(amt);
+            }
+            set cashier_w(amt){
+                return this.#withdraw(amt);
+            }
+
+            get Balance(){
+                return "your balance is " + this.#Bal;
+            }
+
+        }
+        class Acopeningcounter extends Bank{
+            constructor(cname,acno,bal=0){
+                super(cname,acno,bal);
+            }
+        }
+
+        const acc = [];
+        const u1 = new Acopeningcounter("prince",1,100);
+        const u2 = new Acopeningcounter("uday",2,1000);
+        acc.push(u1);
+        acc.push(u2);
+        console.table(acc);
+
+        u1.cashier_d = 200;
+        console.log(u1.Balance);
+        u1.cashier_w = 200;
+        console.log(u1.Balance);
+        u2.cashier_w = 500;
+        console.log(u2.Balance);
+    </script>
+</body>
+</html>

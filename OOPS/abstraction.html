@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1,p{
+            color: azure;
+        }
+    </style>
+</head>
+<body>
+    <h1>What are Abstract Classes?</h1>
+    <p>Abstract classes can be defined as classes that cannot be instantiated i.e. whose object reference cannot be created.</p>
+    <p>An abstract method is method that can only be declared but has no implementation to it.</p>
+    <p>Abstract classes need to be inherited and require subclasses to provide implementation for the method declared in the abstract class</p>
+    <script>
+        class HeadOffice {
+            constructor(){
+                if(this.constructor == HeadOffice){
+                    throw new Error('object of abstract class cannot be created');
+                }
+            }
+            display(msg){
+                // throw new Error('abstract method has no implementation');
+                if(msg == "leave"){
+                    alert("you won't get leave because of workload!");
+                }
+                else{
+                    console.log("OK will let you know after seeing your progress record");
+                }
+            }
+        }
+        // let a = new HeadOffice();
+        class Manager extends HeadOffice{
+            display(msg){
+                // console.log("its working");
+                console.log("sir i want" , msg);
+                super.display(msg);
+            }
+        }
+        let b = new Manager();
+        b.display("leave");
+        b.display("an increment than");
+    </script>
+</body>
+</html>

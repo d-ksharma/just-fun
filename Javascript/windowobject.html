@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        <button type="button" onclick="innerhw()"> Inner Screen Details</button>
+        <button type="button" onclick="wnopen()">open window</button>
+        <button type="button" onclick="wnclose()">close window</button>
+        <button type="button" onclick="moveto()">moveto</button>
+        <button type="button" onclick="moveby()">moveby</button>
+        <p id="result"></p>
+    </div>
+        <script>
+        console.clear();
+        function innerhw(){
+            let p = document.getElementById("result");
+            let a = window.innerWidth;
+            let c = window.innerHeight;
+            p.innerText = `Inner width of screen is: ${a} px and inner height is: ${c} px`    
+        }
+
+        let win;
+        function wnopen(){
+            win = window.open("https://www.google.com","","width=400px,height=400px,left=400px,top=200px");
+        }
+
+
+        function wnclose(){
+            win.window.close();
+        }
+
+        function moveto(){
+            win =  window.open("","",'width=200px,height=200px');
+            win.document.write("<p>My window is moving.</p>");
+            win.moveTo(100,100);
+        }
+
+        function moveby(){
+            win.moveBy(200,200);
+        }
+
+    </script>
+</body>
+</html>

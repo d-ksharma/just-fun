@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="myControl1">
+        <my-directive1></my-directive1>
+        <div class="my-directive1"></div>
+        <!-- directive: my-directive1 -->
+        <div my-directive1></div>
+        <!-- <my-directive2></my-directive2> -->
+        <!-- <div class="my-directive2"></div> -->
+        <!-- directive: my-directive2 -->
+        <!-- <div my-directive2></div> -->
+        <!-- <my-directive3></my-directive3> -->
+        <!-- <div class="my-directive3"></div> -->
+        <!-- directive: my-directive3 -->
+        <!-- <div my-directive3></div> -->
+        <!-- <my-directive4></my-directive4> -->
+        <!-- <div class="my-directive4"></div> -->
+        <!-- directive: my-directive4 -->
+        <!-- <div my-directive4></div> -->
+       
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <script>
+        let app = angular.module("myApp",[]);
+        app.controller("myControl1",function($scope){
+           
+        })
+        app.directive("myDirective1",function(){
+            return{
+                restrict:"ECMA",
+                replace:"true",
+                template: "<h1>Hi its prince here.</h1>"
+            }
+        })
+        app.directive("myDirective2",function(){
+            return{
+                restrict:"ECMA",
+                replace:"true",
+                template: ` <div style="border:2px solid red;background-color:wheat;margin:20px">
+                                <h1>Hi its prince here.<br>Full name is Solanki Princekumar</h1>
+                                <img src="1.jpg" alt="" width="33%">
+                                <img src="2.jpg" alt="" width="33%">
+                            </div>`   
+            }
+        })
+        app.directive("myDirective3",function(){
+            return{
+                templateUrl:"mytemplate.html",
+                restrict:"ECMA",
+                replace:"true"
+            }
+        })
+        app.directive("myDirective4",function(){
+            return{
+                templateUrl:"mytemplate2.html",
+                restrict:"ECMA",
+                replace:"true"
+            }
+        })
+    </script>
+    <script id="mytemplate.html" type="text/ng-template">
+        <div style="border:2px solid red;background-color:black;margin:20px;color:white;padding:20px 40px">
+            <h1>Hi its prince here.<br>Full name is Solanki Princekumar</h1>
+            <img src="1.jpg" alt="" width="33%">
+            <img src="2.jpg" alt="" width="33%">
+        </div>  
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            border: 2px dotted red;
+        }
+        button{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <button type="button">CLICK ME</button>
+        <a href="https://www.google.com/" target="_blank">Google</a>
+    </section>
+    <script>
+        let body = document.getElementsByTagName('body')[0];
+        let section = document.getElementsByTagName('section')[0];
+        let button = document.getElementsByTagName('button')[0];
+        let a = document.getElementsByTagName('a')[0];
+
+        body.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            alert("Body is clicked!");
+        })
+        section.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            alert("section is clicked!");
+        })
+        button.addEventListener('click',(e)=>{
+            e.stopImmediatePropagation();
+            alert("Button is clicked!");
+        }) 
+        button.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            alert("Button is clicked again!");
+        }) 
+        a.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            e.preventDefault();
+        }) 
+
+    </script>
+</body>
+</html>

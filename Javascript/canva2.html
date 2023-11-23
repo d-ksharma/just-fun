@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            padding: 50px 0px;
+            min-height: 700px;
+            display: flex;
+            justify-content:center;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+        canvas{
+            background-color: yellow;
+            margin: 10px 0px;
+            border: 2px solid black;
+        }
+        #canva2{
+            background-color: black;
+        }
+    </style>
+
+</head>
+<body>
+    <section>
+        <h1>Drawing LINEAR GRADIENT using canvas</h1>
+        <canvas id="canva1" width="800" height="500"></canvas>
+    </section>
+    <section>
+        <h1>Drawing LINEAR GRADIENT using canvas</h1>
+        <canvas id="canva2" width="800" height="500"></canvas>
+    </section>
+    <section>
+        <h1>Drawing LINEAR GRADIENT using canvas</h1>
+        <canvas id="canva3" width="800" height="500"></canvas>
+    </section>
+    <section>
+        <h1>Drawing Line using canvas</h1>
+        <canvas id="canva4" width="800" height="500"></canvas>
+    </section>
+    <script>
+        let canva = document.getElementById('canva1');
+        let pen = canva.getContext('2d');
+        let grad = pen.createLinearGradient(150,400,650,400);
+        grad.addColorStop(0,"yellow");
+        grad.addColorStop(0.2,"red");
+        grad.addColorStop(0.5,"green");
+        grad.addColorStop(0.7,"blue");
+        grad.addColorStop(1,"yellow");
+        pen.fillStyle = grad;
+        pen.fillRect(150,100,500,300);
+
+        
+        
+        let canva2 = document.getElementById('canva2');
+        let pen2 = canva2.getContext('2d');
+        let grad1 = pen2.createLinearGradient(500,100,500,400);
+        grad1.addColorStop(0,"black");
+        grad1.addColorStop(0.1,"yellow");
+        grad1.addColorStop(0.2,"red");
+        grad1.addColorStop(0.5,"green");
+        grad1.addColorStop(0.7,"blue");
+        grad1.addColorStop(0.8,"yellow");
+        grad1.addColorStop(1,"black");
+        pen2.fillStyle = grad1;
+        pen2.fillRect(150,100,500,300);
+        
+        let canva3 = document.getElementById('canva3');
+        let pen3 = canva3.getContext('2d');
+        let grad2 = pen.createLinearGradient(150,100,650,400);
+        grad2.addColorStop(0,"black");
+        grad2.addColorStop(0.2,"red");
+        grad2.addColorStop(0.5,"green");
+        grad2.addColorStop(0.7,"blue");
+        grad2.addColorStop(1,"violet");
+        pen3.strokeStyle = grad2;
+        // pen3.lineWidth = "10";
+        pen3.strokeRect(150,100,500,300);
+        pen3.fillStyle = grad2;
+        // pen3.font = "120px cursive"
+        pen3.strokeText('Prince',250,275,500,500);
+
+        let canva4 = document.getElementById('canva4');
+        let pen4 = canva4.getContext('2d');
+        pen4.moveTo(0,0);
+        pen4.lineTo(800,500);
+        
+        pen4.moveTo(800,0);
+        pen4.lineTo(0,500);
+        
+        pen4.moveTo(0,250);
+        pen4.lineTo(800,250);
+        
+        pen4.moveTo(400,0);
+        pen4.lineTo(400,500);
+        pen4.lineWidth = "5";
+        pen4.stroke();
+
+        
+        
+    </script>
+</body>
+</html>

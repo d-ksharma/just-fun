@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body::before{
+            content:" ";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: aqua;
+            background-image: url("https://images.unsplash.com/photo-1670881298357-1792768792d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+            z-index: -1;
+        
+        }
+
+        section{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+            
+        
+        .timer{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            /* background-color: red; */
+            /* border: 2px solid red; */
+            width: 90%;
+            height: 80vh;
+            color: white;
+            /* animation: shake 0.25s ease 0s infinite; */
+        }
+        
+        .time{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-evenly;
+            width: 20%;
+            height: 50%;
+            /* border: 2px solid blue; */
+            position: relative;
+            overflow-wrap: break-word;
+            
+        }
+        .time::before{
+            content: "";
+            background-color: black;
+            border-radius: 40px;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        .timeinnumber{
+            font-size: 8rem;
+        }
+        .timeintext{
+            /* position: absolute; */
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        /* @keyframes shake {
+            0%{
+                transform: scale(1) ;
+            }
+            50%{
+                
+                transform: scale(1.2) ;
+                
+            }
+            100%{
+                transform: scale(1) ;
+                
+            }
+        } */
+        button{
+            height: 100%;
+            font-weight: bold;
+            width: 100%;
+            margin: 20px 0px;
+            font-size: 2.5rem ;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            position: relative;
+            background-image: linear-gradient(black,white,black);
+        }
+        
+        .button{
+            width: auto;
+            display: flex;
+            gap: 50px;
+        }
+        @media (max-width:1300px){
+            .timeinnumber{
+                font-size: 5rem;
+            }
+            .timeintext{
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }
+        @media (max-width:550px){
+            .timer{
+                flex-wrap: wrap;
+                justify-content: none;
+            }
+            .time{
+                width: 100px;
+                height: 200px;
+            }
+            .timeinnumber{
+                font-size: 3rem;
+            }
+            .timeintext{
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .button{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            button{
+                width: 100px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+        </style>
+</head>
+<body>
+    <section>
+        <div class="timer">
+            <div class="time">
+                <p id="hours" class="timeinnumber">00</p>
+                <p class="timeintext">HOURS</p>
+            </div>
+            <div class="time">
+                <p id="minutes" class="timeinnumber">00</p>
+                <p class="timeintext">MINUTES</p>
+            </div>
+            <div class="time">
+                <p id="seconds" class="timeinnumber">00</p>
+                <p class="timeintext">SECONDS</p>
+            </div>
+            <div class="time">
+                <p id="tens" class="timeinnumber">00</p>
+                <p class="timeintext">MILLISECONDS</p>
+            </div>
+        </div>
+        <div class="button">
+            <button type="button" id="start">START</button>
+            <button type="button" id="stop">STOP</button>
+            <button type="button" id="reset">RESET</button>
+        </div>
+    </section>
+
+    <script>
+        let div1 = document.querySelector(".timer");
+        let atens = document.getElementById('tens');
+        let aseconds = document.getElementById('seconds');
+        let aminutes = document.getElementById('minutes');
+        let ahours = document.getElementById('hours');
+        let start = document.querySelector("#start");
+        let stop = document.querySelector("#stop");
+        let reset = document.querySelector("#reset");
+
+        let ten = 0;
+        let second = 0;
+        let minute = 0;
+        let hour = 0;
+        
+        function stopwatch() {
+            ten++;
+            atens.innerText = ten;
+        
+            if(ten <= 9){
+                atens.innerText = "0" + ten;
+            }
+            else if(ten >= 99){
+                second++;
+                if(second <= 9){
+                    aseconds.innerText = "0"+ second;
+                }
+                ten = 0;
+            }
+            else if(second > 9){
+                aseconds.innerText = second;
+            }
+            if(second >= 59){
+                minute++;
+                if(minute <= 9){
+                    aminutes.innerText = "0"+ minute;
+                }
+                aminutes.innerText = minute;
+                second = 0;
+            }
+            else if(minute > 9){
+                aminutes.innerText = minute;
+            }
+            if(minute >= 59){
+                hour++;
+                ahours.innerText = hour;
+                minute = 0;
+            }
+
+
+        }
+
+        let a = setInterval(stopwatch,10);
+
+        stop.onclick = ()=>{
+            clearInterval(a);
+        }
+        start.onclick = ()=>{
+            ten = Number(atens.innerText);
+            a = setInterval(stopwatch,10);
+        }
+        reset.onclick = ()=>{
+            atens.innerText = '00';
+            aseconds.innerText = '00';
+            aminutes.innerText = '00';
+            ahours.innerText = '00';
+
+        }
+        
+    </script>
+</body>
+</html>

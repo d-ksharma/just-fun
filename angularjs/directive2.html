@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        div{
+            border: 2px solid red;
+            border-radius: 10px;
+            background-color: black;
+            color: aliceblue;
+            padding: 20px;
+        }
+        form{
+            margin: 15px 0px;
+        }
+        input{
+            margin: 7px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div ng-init="px=16;rem=1">
+        <h1>Unit Checker(rem to pixels converter)</h1>
+        <form action="">
+            <input type="number" ng-model="rem" min="1"> rem = 
+            <input type="number" ng-model="px" min="10"> Pixel <br>
+            <input type="range" max="80" ng-model="rem" title="{{rem}}"> rem = {{rem*px}} Pixels
+        </form>
+        <!-- <p> {{rem}} rem is equals to {{rem*px}} pixels</p> -->
+        <p> <span ng-bind="rem"></span> rem is equals to <span>{{rem*px}}</span> pixels</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <script>
+    
+    </script>
+</body>
+</html>

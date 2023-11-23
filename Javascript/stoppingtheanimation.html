@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            width: 100px;
+            min-height: 100px;
+            background-color: burlywood;
+            /* animation: loading 2s ease-in-out 0s infinite ; */
+            transition: all 3s ease-in-out;
+        }
+        /* @keyframes loading{
+            from{
+                width: 200px;
+            }
+            to{
+                width: 100%;
+                
+            }
+        } */
+        button{
+            padding: 3px;
+            /* font-size: 1.3rem; */
+            margin: 10px 0px;
+            cursor: pointer;
+            position: relative;
+            left: 0px;
+            transition: left 2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <button type="button">Stop Animation</button>
+    <script>
+        let div = document.querySelector(".container");
+        let btn = document.querySelector("[type=button]");
+        
+        let animation_start = setTimeout(()=>{
+            div.style.cssText = "width:100%;background-color:black;color:white";
+            btn.style.cssText = "position:relative;left:100px"
+        },1000)
+        
+        // let btn = document.querySelector("[type=button]");
+        // btn.addEventListener('click',()=>{
+        //     clearTimeout(animation_start);
+        // })
+        
+        let a = setInterval(()=>{
+            div.innerHTML+="Prince<br>";
+        },1000)
+        
+        btn.addEventListener('click',()=>{
+            clearInterval(a);
+        })
+    </script>
+</body>
+</html>

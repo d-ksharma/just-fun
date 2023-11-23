@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container{
+            height: 33%;
+            border: 2px solid red;
+            position: relative;
+        }
+        .container img{
+            position: absolute;
+            left: 0px;
+            top: 10px;
+            width: 200px;
+            height: 90%;
+            transition: all 1s ease-in-out;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+           
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            padding: 2px;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container" id="div1"><img src="unnamed.png" alt="logo" id="a1"></div>
+        <div class="container" id="div2"><img src="unnamed.png" alt="logo" id="a2"></div>
+        <div class="container" id="div3">
+            <form action="#">
+                <h2>Prince Solanki</h2>
+                <label for="bgcolor">
+                    Background-color : <input type="text" placeholder="Background-Color" id="bgcolor"
+                    value="" 
+                    >
+                    <!-- onkeypress="document.querySelector('section').style.backgroundColor = (this.value)"> -->
+                </label>
+                <label for="opacity">
+                    Opacity : <input type="text" placeholder="Opacity(0 to 1)" id="opacity"
+                    >
+                    <!-- onkeypress="document.querySelector('#div1').style.opacity = (this.value)"> -->
+                </label>
+                <label for="fontsize">
+                    Font-size : <input type="text" placeholder="Font-Size in px" id="fontsize"
+                    >
+                    <!-- onkeyup="document.querySelector('h2').style.fontSize = (this.value)"> -->
+                </label>
+                <label for="moving-image">
+                    Moving-Image : <input type="text" placeholder="Enter value in px" id="moving-image"
+                    >
+                    <!-- onkeydown="document.querySelector('#a2').style.left = (this.value)"> -->
+                </label>
+            </form>
+        </div>
+    </section>
+    <script>
+        let bgcolor = document.getElementById('bgcolor');
+        let opacity = document.getElementById('opacity');
+        let fontsize = document.getElementById('fontsize');
+        let movingimage = document.getElementById('moving-image');
+        bgcolor.addEventListener('keypress',()=>{
+            document.querySelector('section').style.backgroundColor = (bgcolor.value);
+        });
+        opacity.addEventListener('keypress',()=>{
+            document.querySelector('#div1').style.opacity = (opacity.value);
+        });
+        fontsize.addEventListener('keyup',()=>{
+            document.querySelector('h2').style.fontSize = (fontsize.value);
+        });
+        movingimage.addEventListener('keydown',()=>{
+            document.querySelector('#a2').style.left = (movingimage.value);
+        });
+    </script>
+
+</body>
+</html>

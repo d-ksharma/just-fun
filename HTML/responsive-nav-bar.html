@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        header{
+            width: 96%;
+            /* border: 2px solid red; */
+            background-color: aqua;
+            border-radius: 10px;
+            margin: 0 auto;
+            height: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        nav{
+            /* border: 2px solid red; */
+            width: 40rem;
+        }
+        .logo{
+            width: 2.5rem;
+            border-radius: 50%;
+
+        }
+        #navbar ul{
+            display: flex;
+            list-style-type: none;
+            justify-content: space-evenly;
+        }
+        .nav-link{
+            text-decoration: none;
+
+        }
+        .nav-link:hover{
+            color: red;
+            border-bottom: 2px solid red;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="unnamed.png" class="logo" alt="image">
+        <nav id="navbar">
+            <ul>
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link">About us</a></li>
+                <li><a href="#" class="nav-link">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
